@@ -1,13 +1,15 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "e-square-task": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "changeDetection": "OnPush",
+          "inlineTemplate": true
         }
       },
       "root": "",
@@ -123,6 +125,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "e-square-task"
+    }
+  },
+  "defaultProject": "e-square-task",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.trim-text {
+  display: inline-block;
+  //white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modal-body {
+  max-height: 50vh;
+}
+.modal.fade .modal-dialog{
+  transform: translate(0,0px);
+}
+.modal-header {
+  justify-content: center;
+  .close {
+    padding: 0.5rem 1rem !important;
+    margin: 0rem 0rem 0rem 0rem !important;
+  }
+}
+

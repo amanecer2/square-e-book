@@ -1,0 +1,31 @@
+<ng-container *ngIf="data$ | async as data">
+  <div class="row ">
+    <div class="mb-3 col-sm-9 col-md-7 col-lg-5 mx-auto">
+
+      <div class="input-group my-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">search</span>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          (input)="onInputHandler($event.target.value)"
+          [value]="query"
+          placeholder="Username"
+          aria-label="Username"
+          aria-describedby="basic-addon1">
+      </div>
+
+      <app-book-item *ngFor="let book of data[MAPPER.BOOKS]?.items; trackBy: trackByService.index"
+                     [book]="book"
+                     (onBookDetails)="onBookDetailsHandler(book, data[MAPPER.WISH_LIST].mapper[book.id] > -1)"
+      >
+      </app-book-item>
+    </div>
+  </div>
+</ng-container>
+
+
+<ng-template #defaultModal let-book let-functions="functions">
+  <app-book-item-details [functions]="functions" [book]="book.data.book" [isFavorite]="book.data.isFavorite"></app-book-item-details>
+</ng-template>
