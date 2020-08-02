@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {BookComponent} from './book/book.component';
 import {BooksComponent} from './books.component';
 import {WishlistComponent} from './wishlist/wishlist.component';
+import {APP_NAVIGATOR} from '../../constant/app-navigator.constant';
 
 
 const routes: Routes = [
@@ -12,15 +13,15 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'search',
+        redirectTo: APP_NAVIGATOR.SEARCH,
         pathMatch: 'full'
       },
       {
-        path: 'search',
+        path: APP_NAVIGATOR.SEARCH,
         component: BookComponent
       },
       {
-        path: 'wishlist',
+        path: APP_NAVIGATOR.WISHLIST,
         component: WishlistComponent
       }
     ]

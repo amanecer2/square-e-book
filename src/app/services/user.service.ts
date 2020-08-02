@@ -11,8 +11,8 @@ export interface IUser {
 })
 export class UserService {
 
-  private _user$ = new BehaviorSubject<IUser>({username: 'amanecer', password: '324234'});
-  // private _user$ = new BehaviorSubject<IUser>({username: undefined, password: undefined});
+  //private _user$ = new BehaviorSubject<IUser>({username: 'amanecer', password: '324234'});
+  private _user$ = new BehaviorSubject<IUser>({username: undefined, password: undefined});
   user$ = this._user$.asObservable();
 
   constructor() {
