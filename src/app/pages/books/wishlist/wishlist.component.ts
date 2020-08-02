@@ -28,7 +28,7 @@ import {IBook} from '../../../interfaces/books.interface';
       </ng-container>
 
       <ng-template #noWishlists>
-        <div>
+        <div class="d-flex justify-content-center">
           You dont have any wishlist yet. Please feel free to search for one.
         </div>
       </ng-template>
